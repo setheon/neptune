@@ -1,0 +1,30 @@
+/* scroll-to-top.css */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333; /* Background color of the button */
+    color: #fff; /* Text color of the button */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+    z-index: 1000; /* Make sure it's on top of other elements */
+}
+
+.scroll-to-top:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+.scroll-to-top svg {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+}

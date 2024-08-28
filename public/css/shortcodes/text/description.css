@@ -1,0 +1,70 @@
+/* Full Width Box */
+.description-full-width-box {
+    width: 100%;
+    padding: 0; /* Remove padding if not needed */
+    box-sizing: border-box;
+}
+
+/* Container for Title and Content Boxes */
+.description-content-wrapper {
+    width: 85%; /* Full width with padding on smaller screens */
+    margin: 0 auto; /* Center the container */
+    box-sizing: border-box;
+    padding: 0 0px; /* Ensure text is 10px off the edge */
+}
+
+/* Styling for Title Box */
+.description-title-box {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space between title and content */
+    padding-left: 20px; /* Align the title 10px inward */
+}
+
+/* Styling for Text Box Layout */
+.description-content-box {
+    display: grid;
+    grid-template-columns: 50% 25% 25%; /* Columns with 50%, 25%, and 25% widths */
+    gap: 15px; /* Space between columns */
+    box-sizing: border-box;
+}
+
+/* Styling for Text Columns */
+.description-text-column {
+    box-sizing: border-box;
+}
+
+/* Common Styling for Sections */
+.description-section {
+    margin-top: 10px; /* Space between sections */
+    line-height: 1.4;
+}
+
+.description-section label {
+    font-weight: light;
+    opacity: 0.3;
+    margin-right: 10px;
+    display: block; /* Ensure labels are block elements for consistent alignment */
+}
+
+.description-section div {
+    font-weight: normal;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+    .description-content-wrapper {
+        width: 100%; /* Full width on small screens */
+        padding: 0 10px; /* Ensure padding on mobile */
+    }
+
+    .description-content-box {
+        grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+        gap: 10px; /* Space between stacked items */
+    }
+
+    .description-title-box {
+        font-size: 1.2rem; /* Adjust font size on mobile */
+        padding-left: 0; /* Align the title with no extra padding on mobile */
+        margin-bottom: 10px; /* Adjust space between title and content on mobile */
+    }
+}

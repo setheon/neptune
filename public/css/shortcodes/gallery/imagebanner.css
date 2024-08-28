@@ -1,0 +1,65 @@
+/* Ensure the imagebanner spans full width */
+.imagebanner {
+  position: relative;
+  width: 100% !important; /* Full width */
+  padding: 20px 0;
+  margin: 0;
+  background-color: white;
+  z-index: 1;
+  border-bottom: 10px solid white;
+}
+
+/* Ensure imagebanner container displays items in a column */
+.imagebanner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important; /* Full width */
+}
+
+/* Ensure no additional margins or padding on imagebanner items */
+.imagebanner-item {
+  position: relative;
+  margin: 0;
+  width: 100% !important; /* Full width */
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Ensure images stretch correctly and container doesn't add extra space */
+.imagebanner-item img {
+  width: 100% !important; /* Full width */
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Darken the image on hover */
+.imagebanner-item:hover img {
+  filter: brightness(80%);
+}
+
+/* Styling for captions */
+.imagebanner-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 2em;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.imagebanner-item:hover .imagebanner-caption {
+  opacity: 1;
+}
+
+.imagebanner-caption h2 {
+  margin: 0;
+}
+
+.imagebanner-caption p {
+  display: none;
+}

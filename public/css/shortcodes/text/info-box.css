@@ -1,0 +1,142 @@
+/* Full Width Box */
+.full-width-box {
+  width: 100%;
+  background-color: white;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+/* Styling for Separators */
+.separator {
+  display: inline-block;
+  font-weight: light; /* Lighter font for separators */
+  opacity: 0.3; /* 30% opacity for separators */
+  color: #333; /* Dark grey color for separators */
+  margin: 0 10px; /* Space on both sides of the separator */
+  font-size: 1em; /* Adjust size if needed */
+}
+/* Styling for Text Box Layout */
+.text-box {
+  width: 70%; /* Adjust this to control the width of the text box */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr; /* Different sizes for each column */
+  gap: 20px; /* Space between columns */
+  color: #333; /* Dark grey text color */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Styling for Text Columns */
+.text-column {
+  padding: 0 15px; /* Padding for space inside columns */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Additional Adjustments (if needed) */
+.text-box .first-column {
+  grid-column: 1 / 2; /* Place in the first grid line */
+}
+
+.text-box .second-column {
+  grid-column: 2 / 3; /* Place in the second grid line */
+}
+
+.text-box .third-column {
+  grid-column: 3 / 4; /* Place in the third grid line */
+}
+
+/* Styling for Info Sections */
+.info-section {
+  margin-top: 20px; /* Space above info sections */
+  line-height: 1.4; /* Line height for readability */
+}
+
+.info-section label {
+  font-weight: light; /* Lighter font for labels */
+  opacity: 0.3; /* 30% opacity for labels */
+  color: #333; /* Dark grey color for labels */
+  margin-right: 10px; /* Space between label and separator */
+}
+
+.info-section div {
+  font-weight: bold; /* Bold text for info */
+  color: #333; /* Dark grey color for info text */
+}
+
+/* Styling for Links Section */
+.links-section {
+  margin-top: 60px; /* Space above links section */
+  line-height: 1.4; /* Line height for readability */
+}
+
+.links-section label {
+  font-weight: light; /* Lighter font for links label */
+  opacity: 0.3; /* 30% opacity for links label */
+  color: #333; /* Dark grey color for links label */
+}
+
+/* Define the Wiggle Animation */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.links-section div a {
+  color: #343434; /* Default link color */
+  text-decoration: underline; /* Underline by default */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and underline */
+}
+
+.links-section div a:hover {
+  text-decoration: underline; /* Underline on hover */
+  animation: wiggle 0.5s ease-in-out; /* Apply wiggle animation */
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .text-box {
+    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+    width: 100%; /* Full width on small screens */
+    padding: 30px; /* Adjust padding for smaller screens */
+  }
+
+  .text-column {
+    margin: 20px 0; /* Space top and bottom for small screens */
+    padding: 0; /* Remove padding for better alignment */
+  }
+}
+
+/* Styling for Text Box Layout */
+.text-box {
+  width: 70%; /* Adjust this to control the width of the text box */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; /* Adjust the size of the columns */
+  gap: 20px; /* Space between columns */
+  color: #333; /* Dark grey text color */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Adjusting the Description Section to Span from Halfway to the Right */
+.description-section {
+  grid-column: 2 / 4; /* Span from the second column to the end of the third column */
+  margin-top: 60px; /* Space above description section */
+  line-height: 1.4; /* Line height for readability */
+  color: #343434; /* Default text color */
+  padding: 0 15px; /* Padding for spacing */
+}
+
+/* Styling for Description Label */
+.description-section label {
+  font-weight: light; /* Lighter font for description label */
+  opacity: 0.3; /* 30% opacity for description label */
+  color: #333; /* Dark grey color for description label */
+}
+
+/* Styling for Description Content */
+.description-section div {
+  text-decoration: none; /* Remove underline for description links */
+}

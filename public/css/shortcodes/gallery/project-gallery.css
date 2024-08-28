@@ -1,0 +1,64 @@
+/* Masonry image project-gallery styling */
+.project-gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+  }
+  
+  .project-gallery .images {
+	gap: 5px;
+	max-width: 90%;
+	margin: 5px 0;
+    columns: var(--GalleryColumns, 3);
+	list-style: none;
+  }
+  
+  .project-gallery .images .img {
+	display: block;
+	margin-bottom: 5px;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  
+  .project-gallery .images img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover; /* Ensures that images cover their containers while maintaining aspect ratio */
+	transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  
+  /* Zoom effect on hover */
+  .project-gallery .images .img:hover img {
+	transform: scale(1.005); /* Zoom in by 0.5% */
+  }
+  
+  @media screen and (max-width: 900px) {
+	.project-gallery {
+	  margin-top: 0px;
+	}
+  
+	.project-gallery .images {
+	  max-width: 100%;
+	  padding: 0 13px;
+	  margin-top: 20px;
+	  columns: 2; /* Adjust column count and column width */
+	}
+  }
+  /* Responsive media query code */
+  @media screen and (max-width: 640px) {
+	.project-gallery {
+	  margin-top: 0px;
+	}
+  
+	.project-gallery .images {
+	  max-width: 100%;
+	  padding: 0 13px;
+	  margin-top: 20px;
+	  columns: 1; /* Adjust column count and column width */
+	}
+  }
+
+  

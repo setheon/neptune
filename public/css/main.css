@@ -1,0 +1,48 @@
+/* --------------------------------------- */
+/*                 MAIN CSS
+/* --------------------------------------- */
+
+/* Main adjustments */
+@import url('base/main/style.css');
+@import url('base/main/404.css');
+/* Fonts */
+@import url('fonts.css');
+
+/* Header/Navbar */
+@import url('base/header/navbar.css');
+
+/* Footer */
+@import url('base/footer/footer.css');
+
+/* --------------------------------------- */
+/*              CSS SHORTCODES
+/* --------------------------------------- */
+
+/* Gallery Shortcodes */
+@import url('shortcodes/gallery/project-gallery.css');
+@import url('shortcodes/gallery/post-gallery.css');
+
+@import url('shortcodes/gallery/gallery.css');
+@import url('shortcodes/gallery/imagebanner.css');
+@import url('shortcodes/gallery/slideshow.css');
+
+/* Banner Shortcodes */
+@import url('shortcodes/banner/banner.css');
+
+/* Video Shortcodes */
+@import url('shortcodes/video/video-embed.css');
+
+/* Text Shortcodes */
+@import url('shortcodes/text/title.css');
+@import url('shortcodes/text/test.css');
+@import url('shortcodes/text/info-box.css');
+@import url('shortcodes/text/quote.css');
+@import url('shortcodes/text/textbox-two-column.css');
+@import url('shortcodes/text/page-description.css');
+@import url('shortcodes/text/description.css');
+
+/* Buttons */
+@import url('shortcodes/buttons/square-button.css');
+@import url('shortcodes/buttons/scroll-to-top.css');
+
+

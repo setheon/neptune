@@ -1,0 +1,51 @@
+/* Flexbox container for gallery */
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between items */
+}
+
+/* Flex items for images */
+.flexbox .item {
+  flex: 1 1 calc(33.33% - 10px); /* Adjust for three columns with gaps */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Title styling for items */
+.flexbox .item .title {
+  color: var(--white);
+  font-size: xx-large;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
+
+/* Image styling within items */
+.flexbox .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.8s;
+}
+
+/* Hover effect on images */
+.flexbox .item:hover img {
+  opacity: 0.7; /* Reduce opacity on hover */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 860px) {
+  .flexbox .item {
+      flex: 1 1 calc(50% - 10px); /* Adjust for two columns */
+  }
+}
+
+@media (max-width: 667px) {
+  .flexbox .item {
+      flex: 1 1 100%; /* Adjust for one column */
+  }
+}

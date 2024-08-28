@@ -1,0 +1,37 @@
+/* Container for the video */
+.video-container {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  height: 500px; /* Fixed height for the video container */
+  overflow: hidden; /* Ensure content doesn't overflow the container */
+  background-color: inherit; /* Maintain the container background */
+  box-sizing: border-box; /* Include padding and borders in width and height calculations */
+}
+
+/* Video styling */
+.video-container video {
+  width: 100%; /* Ensure the video spans the full width */
+  height: 100%; /* Ensure the video spans the full height */
+  object-fit: cover; /* Crop the video to fill the container */
+  object-position: center; /* Center the video content */
+}
+
+/* Content container inside video container */
+#video-content {
+  position: absolute; /* Position above the video */
+  bottom: 10px; /* Distance from the bottom */
+  left: 10px; /* Distance from the left */
+  color: inherit;
+  padding: 10px;
+  width: 100%; /* Full width of the page */
+  font-size: 1.2em; /* Adjust font size as needed */
+  background: inherit; /* Semi-transparent background */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+  z-index: 2; /* Ensure the content is above the video */
+}
+
+/* Show content on hover or when active */
+.video-container:hover #video-content {
+  opacity: 1; /* Show content on hover */
+}
