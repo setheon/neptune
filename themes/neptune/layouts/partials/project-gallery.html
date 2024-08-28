@@ -21,16 +21,18 @@
                   <img src="{{ $featuredPath }}" alt="{{ .Title }}">
                 </a>
               </li>
+            {{ else }}
+              <p>No featured image found for {{ .Title }}.</p>
             {{ end }}
           {{ end }}
         {{ else }}
           <p>No sorted posts found.</p>
         {{ end }}
       {{ else }}
-        <p>No posts found in directory.</p>
+        <p>No posts found in directory: {{ $postsDir }}.</p>
       {{ end }}
     {{ else }}
-      <p>No pages found.</p>
+      <p>No pages found in site.</p>
     {{ end }}
   </ul>
 </section>
