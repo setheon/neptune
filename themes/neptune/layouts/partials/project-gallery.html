@@ -1,37 +1,51 @@
 {{ $UseGallery := .Params.UseGallery | default true }}
 {{ $GalleryColumns := .Params.GalleryColumns | default 3 }}
+
 {{ if $UseGallery }}
+  <section id="project-gallery" class="post-gallery">
+    <ul class="images">
+      <!-- Debugging: Display number of pages in site -->
+      <p>Number of Pages in Site: {{ len .Site.Pages }}</p>
 
-<section id="project-gallery" class="post-gallery">
-  <ul class="images">
-    {{ $currentPageDir := path.Dir .File.Path }}
-    {{ $postsDir := printf "%s/post" $currentPageDir }}
+      <!-- Fetch pages that have a featured image -->
+      {{ $featuredPages := where .Site.Pages "Params.featured" "ne" "" }}
+      <p>Number of Featured Pages: {{ len $featuredPages }}</p>
 
-    <!-- Fetch pages from the posts directory and sort by rank -->
-    {{ $posts := where .Site.Pages "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
-    {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
+      <!-- Sort pages by rank if available -->
+      {{ $sortedPages := sort $featuredPages "Params.rank" "desc" }}
 
-    {{ range $sortedPosts }}
-      {{ $featured := .Params.featured }}
-      {{ if $featured }}
-        <!-- Construct the full path to the image -->
-        {{ $featuredPath := .Params.featured | relURL }}
-        <li class="img">
-          <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
-            <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-          </a>
-        </li>
+      {{ range $sortedPages }}
+        {{ $featured := .Params.featured }}
+        {{ if $featured }}
+          <!-- Construct the full path to the image -->
+          {{ $featuredPath := .Params.featured | relURL }}
+          <li class="img">
+            <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
+              <img src="{{ $featuredPath }}" alt="{{ .Title }}">
+              <!-- Debugging: Output the image path -->
+              <p>Image Path: {{ $featuredPath }}</p>
+            </a>
+          </li>
+        {{ else }}
+          <!-- Debugging: No featured image found -->
+          <li class="img">
+            <p>No Featured Image for {{ .Title }}</p>
+          </li>
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </ul>
-</section>
+    </ul>
+  </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var gallery = document.getElementById('project-gallery'); // Fix ID reference
-    var columns = {{ $GalleryColumns }};
-    gallery.style.setProperty('--GalleryColumns', columns);
-  });
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var gallery = document.getElementById('project-gallery');
+      var columns = {{ $GalleryColumns }};
+      gallery.style.setProperty('--GalleryColumns', columns);
+      console.log('Gallery Columns:', columns);
+    });
+  </script>
 
+{{ else }}
+  <!-- Debugging: Gallery is disabled -->
+  <p>Gallery is disabled or not available.</p>
 {{ end }}

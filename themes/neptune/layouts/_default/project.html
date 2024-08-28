@@ -4,18 +4,18 @@
 
   <article class="content-single">
     <!-- Page description -->
-    {{ $showDescription := .Params.showDescription| default true }}
+    {{ $showDescription := .Params.showDescription | default true }}
     {{ if $showDescription }}
-    <div class="content-body">
-      {{ partial "page-description" . }}
-    </div>
+      <div class="content-body">
+        {{ partial "page-description" . }}
+      </div>
     {{ end }}
 
     <!-- Masonry Gallery body -->
     {{ partial "project-gallery.html" . }}
 
     {{ $UseCustomMarkdownLayout := .Params.UseCustomMarkdownLayout | default false }}
-    {{ if .Params.UseCustomMarkdownLayout }}
+    {{ if $UseCustomMarkdownLayout }}
       <div class="content-body">
         {{ .Content }}
       </div>

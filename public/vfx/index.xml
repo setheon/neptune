@@ -1,9 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VFX on seth.nz</title><link>https://seth.nz/vfx/</link><description>Recent content in VFX on seth.nz</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://seth.nz/vfx/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://seth.nz/film/project/evangelion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://seth.nz/film/project/evangelion/</guid><description>EVANGELION RE:LIVED (W.I.P) EVANELGION RE:LIVED IS STILL A WORK IN PROGRESS STAY TUNED FOR UPDATES EVANGELION RE:LIVED
-About
-- This project is a homage to the works of Hideaki Anno, creator of the hit 90s anime Evangelion and the subsequent films that came out. Evangelion has become a cult classic, beloved across the world and it captured my heart in my teen years. I decided to make this project as my personal homage to Evangelion and the world Hideaki Anno created.</description></item><item><title/><link>https://seth.nz/film/project/universe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://seth.nz/film/project/universe/</guid><description>UNIVERSE UNIVERSE
-About
-- UNIVERSE is a hobby project of mine that I have been creating in Blender. I started this project to teach myself Blender and render some interesting planets, space ships and stars. I plan to release my final renders in video form sometime during 2025. ~
-Socials
-- Instagram YouTube ~
-Contact
-- If you have any inquires regarding my creative work or wish to chat about working together, get it touch with me by sending me an email to info@seth.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VFX on seth.nz</title>
+    <link>http://localhost:1313/vfx/</link>
+    <description>Recent content in VFX on seth.nz</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/vfx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/film/project/evangelion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/film/project/evangelion/</guid>
+      <description>EVANGELION RE:LIVED (W.I.P) EVANELGION RE:LIVED IS STILL A WORK IN PROGRESS STAY TUNED FOR UPDATES EVANGELION RE:LIVED&#xA;About&#xA;- This project is a homage to the works of Hideaki Anno, creator of the hit 90s anime Evangelion and the subsequent films that came out. Evangelion has become a cult classic, beloved across the world and it captured my heart in my teen years. I decided to make this project as my personal homage to Evangelion and the world Hideaki Anno created.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/film/project/universe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/film/project/universe/</guid>
+      <description>UNIVERSE UNIVERSE&#xA;About&#xA;- UNIVERSE is a hobby project of mine that I have been creating in Blender. I started this project to teach myself Blender and render some interesting planets, space ships and stars. I plan to release my final renders in video form sometime during 2025. ~&#xA;Socials&#xA;- Instagram YouTube ~&#xA;Contact&#xA;- If you have any inquires regarding my creative work or wish to chat about working together, get it touch with me by sending me an email to info@seth.</description>
+    </item>
+  </channel>
+</rss>

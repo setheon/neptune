@@ -2,7 +2,7 @@
 layout: "project"
 darkMode: true
 UseGallery: true
-title: PEOPLE
+title: PORTRAITURE
 
 oneLabel: About
 one: |
