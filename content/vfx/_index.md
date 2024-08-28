@@ -1,6 +1,6 @@
 ---
 title: "VFX"
-layout: "film"
+layout: "project"
 UseCustomMarkdownLayout: "true"
 DarkMode: true
 

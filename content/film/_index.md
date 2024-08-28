@@ -1,6 +1,6 @@
 ---
 title: "FILMOGRAPHY"
-layout: "film"
+layout: "project"
 UseCustomMarkdownLayout: "true"
 ShowBannerVideo: "true"
 BannerVideoSource: "vid/background.mp4"
