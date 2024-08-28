@@ -1,0 +1,12 @@
+# No conflicts between testing branches
+themes/
+
+# Node
+node_modules/
+
+# Hugo build
+**/public/
+**/resources/_gen
+.hugo_build.lock
+
+TODO.md

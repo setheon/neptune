@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Add your custom CSS file here -->
+  <link rel="stylesheet" href="{{ "path/to/your/style.css" | relURL }}">
+</head>
+<body>
+  <!-- Navbar Background -->
+  <div id="navbar-background"></div>
+  
+  <nav id="navbar">
+    <div class="nav-wrapper">
+      <div class="logo">
+        <!-- Logo linked to an image in /static/logo.png -->
+        <a href="/" class="interactable">
+          <img
+            id="page-logo"
+            src="{{ .Site.Params.assets.logo}}"
+            alt="seth.nz"
+          />
+        </a>    
+      </div>
+      
+      <!-- Navbar Links -->
+      <ul class="menu">
+        {{ $menu := .Site.Data.menu.main_menu }}
+        {{ range $menu }}
+          <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menu Icon -->
+  <div class="menuIcon">
+    <span class="icon icon-bars"></span>
+    <span class="icon icon-bars overlay"></span>
+  </div>
+
+  <!-- Overlay Menu -->
+  <div class="overlay-menu">
+    <ul class="menu">
+      {{ $menu := .Site.Data.menu.main_menu }}
+      {{ range $menu }}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+</body>
+</html>

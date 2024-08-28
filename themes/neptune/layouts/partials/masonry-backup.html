@@ -1,0 +1,43 @@
+{{ $UseGallery := .Params.UseGallery | default true }}
+{{ if .Params.UseGallery }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <script src="{{ "js/script.js" | relURL }}" defer></script>
+</head>
+<body>
+  <div class="lightbox">
+    <div class="wrapper">
+      <header>
+        <div class="details">
+          <i class="uil uil-camera"></i>
+        </div>
+        <div class="buttons"><i class="close-icon uil uil-times"></i></div>
+      </header>
+      <div class="preview-img">
+        <div class="img"><img src="" alt="preview-img"></div>
+      </div>
+    </div>
+  </div>
+  
+  <section class="gallery">
+    <ul class="images">
+      {{ $pages := where .Site.Pages "Params.featured" "ne" nil }}
+      {{ range $pages }}
+        {{ $featured := .Params.featured }}
+        {{ $link := .Permalink }}
+        <li class="img">
+          <a href="{{ $link }}">
+            <img src="{{ $featured }}" alt="Image">
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+</body>
+</html>
+{{ end }}

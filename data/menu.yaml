@@ -1,0 +1,9 @@
+main_menu:
+  - url: "/"
+    name: "home"
+  - url: "/film"
+    name: "film"
+  - url: "/photography"
+    name: "photo"
+  - url: "https://www.linkedin.com/in/seth-copeland-524b50246/"
+    name: "linkedin"

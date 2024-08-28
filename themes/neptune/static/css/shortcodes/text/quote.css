@@ -1,0 +1,13 @@
+/* Styling for Quote Shortcode */
+.quote-box {
+    text-align: center; /* Center the text */
+    font-size: 3rem; /* Very large text size */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Add padding around the text (adjust if needed) */
+    width: 100%; /* Span the full width of the container */
+    height: 200px; /* Set the height to exactly 300px */
+    box-sizing: border-box; /* Include padding in the height calculation */
+    display: flex; /* Use Flexbox for vertical centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+  }

@@ -1,0 +1,10 @@
+<div class="video-container">
+  {{ $video := .Get "src" | resources.Get }}
+  <video autoplay muted playsinline loop>
+    <source src="{{ $video.Permalink }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="video-content">
+    <!-- Add any additional content you need here -->
+  </div>
+</div>

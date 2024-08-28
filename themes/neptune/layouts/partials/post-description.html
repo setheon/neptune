@@ -1,0 +1,127 @@
+{{- with .Params -}}
+    {{- $title := .title | markdownify -}}
+    {{- $description := .description | markdownify -}}
+    {{- $descriptionLabel := .descriptionLabel | markdownify -}}
+    {{- $author := .author | markdownify -}}
+    {{- $authorLabel := .authorLabel | markdownify -}}
+    {{- $year := .year -}}
+    {{- $yearLabel := .yearLabel | markdownify -}}
+    {{- $links := .links | markdownify -}}
+    {{- $linksLabel := .linksLabel | markdownify -}}
+
+    {{- $showtitle := .Showtitle | default true -}}
+    {{- $showdescription := .Showdescription | default true -}}
+    {{- $showauthor := .Showauthor | default true -}}
+    {{- $showyear := .Showyear | default true -}}
+    {{- $showlinks := .Showlinks | default true -}}
+    {{- $showTitle := .ShowTitle | markdownify -}}
+
+    {{- $titleFontSize := .titleFontSize | default "2.5em" -}}
+    {{- $titleFontWeight := .titleFontWeight | default "700" -}}
+    {{- $descriptionFontSize := .descriptionFontSize | default "18px" -}}
+    {{- $descriptionFontWeight := .descriptionFontWeight | default "600" -}}
+    {{- $descriptionLabelFontSize := .descriptionLabelFontSize | default "16px" -}}
+    {{- $descriptionLabelFontWeight := .descriptionLabelFontWeight | default "600" -}}
+    {{- $authorFontSize := .authorFontSize | default "18px" -}}
+    {{- $authorFontWeight := .authorFontWeight | default "600" -}}
+    {{- $authorLabelFontSize := .authorLabelFontSize | default "16px" -}}
+    {{- $authorLabelFontWeight := .authorLabelFontWeight | default "600" -}}
+    {{- $yearFontSize := .yearFontSize | default "18px" -}}
+    {{- $yearFontWeight := .yearFontWeight | default "600" -}}
+    {{- $yearLabelFontSize := .yearLabelFontSize | default "16px" -}}
+    {{- $yearLabelFontWeight := .yearLabelFontWeight | default "600" -}}
+    {{- $linksFontSize := .linksFontSize | default "16px" -}}
+    {{- $linksFontWeight := .linksFontWeight | default "normal" -}}
+    {{- $linksLabelFontSize := .linksLabelFontSize | default "16px" -}}
+    {{- $linksLabelFontWeight := .linksLabelFontWeight | default "600" -}}
+    
+    {{ $showDescription := .Params.showDescription| default true }}
+    {{ if $showDescription }}
+    
+    <div class="page-description-container">
+        <div class="page-description-section page-description-section-large">
+            {{ if $showtitle }}
+            <div class="page-description-element">
+                <div class="page-description-title">
+                    <label style="font-size: {{ $titleFontSize }}; font-weight: {{ $titleFontWeight }};">
+                        {{ $title }}<br>
+                </div>
+            </div>
+            {{ end }}
+            {{ if $showdescription }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $descriptionLabelFontSize }}; font-weight: {{ $descriptionLabelFontWeight }};">
+                        {{ $descriptionLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $descriptionFontSize }}; font-weight: {{ $descriptionFontWeight }};">
+                    {{ $description }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-medium">
+            {{ if $showtitle }}
+            <div class="page-description-element">
+                <div class="page-description-element">
+                    <label style="font-size: {{ .Params.descriptionLabelFontSize | default "2em" }}; 
+                    font-weight: {{ .Params.descriptionLabelFontWeight | default "bold" }}; 
+                    opacity: 0;">
+                    ~<br>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showauthor }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $authorLabelFontSize }}; font-weight: {{ $authorLabelFontWeight }};">
+                        {{ $authorLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $authorFontSize }}; font-weight: {{ $authorFontWeight }};">
+                    {{ $author }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showyear }}
+            <div class="page-description-2nd-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $yearLabelFontSize }}; font-weight: {{ $yearLabelFontWeight }};">
+                        {{ $yearLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $yearFontSize }}; font-weight: {{ $yearFontWeight }};">
+                    {{ $year }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-small">
+            {{ if $showtitle }}
+            <div class="page-description-element">
+                <div class="page-description-element">
+                    <label style="font-size: {{ .Params.descriptionLabelFontSize | default "2em" }}; 
+                    font-weight: {{ .Params.descriptionLabelFontWeight | default "bold" }}; 
+                    opacity: 0;">
+                    ~<br>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showlinks }}
+            <div class="page-description-2nd-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $linksLabelFontSize }}; font-weight: {{ $linksLabelFontWeight }};">
+                        {{ $linksLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $linksFontSize }}; font-weight: {{ $linksFontWeight }};">
+                    {{ $links }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+{{- end -}}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="film-gallery">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+    <div class="gallery-container">
+      {{ range .Pages }}
+        <div class="gallery-item">
+          <a href="{{ .Permalink }}">
+            <img src="{{ .Params.image | default "default-image.jpg" | absURL }}" alt="{{ .Title }}" />
+            <div class="gallery-caption">
+              <h2>{{ .Title }}</h2>
+              <!-- Description is hidden by CSS -->
+              <p>{{ .Summary }}</p>
+            </div>
+          </a>
+        </div>
+      {{ else }}
+        <p>No posts found.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

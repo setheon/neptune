@@ -1,0 +1,105 @@
+/* Noto Fonts */
+
+@font-face {
+    font-family: 'NotoSans Italic';
+    src: url('/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSansDisplay Italic';
+    src: url('/fonts/NotoSansDisplay-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'NotoSansDisplay';
+    src: url('/fonts/NotoSansDisplay-VariableFont_wdth,wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSansJP';
+    src: url('/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSansMono';
+    src: url('/fonts/NotoSansMono-VariableFont_wdth,wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSansRunic';
+    src: url('/fonts/NotoSansRunic-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NotoSerif Italic';
+    src: url('/fonts/NotoSerif-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'NotoSerif';
+    src: url('/fonts/NotoSerif-VariableFont_wdth,wght.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-VariableFont_wght.ttf') format('truetype');
+  }
+
+/* Noto Sans Display */
+.noto-sans-display {
+    font-family: "NotoSansDisplay", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with specific weight if needed */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Noto Serif */
+.noto-serif {
+    font-family: "NotoSerif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with specific weight if needed */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Noto Sans */
+.noto-sans {
+    font-family: "NotoSans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with specific weight if needed */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Noto Sans Mono */
+.noto-sans-mono {
+    font-family: "NotoSansMono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with specific weight if needed */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Noto Sans Runic Font */
+.noto-sans-runic-regular {
+    font-family: "NotoSansRunic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Noto Sans Japanese Script */
+.noto-sans-jp {
+    font-family: "NotoSansJP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with specific weight if needed */
+    font-style: normal;
+}

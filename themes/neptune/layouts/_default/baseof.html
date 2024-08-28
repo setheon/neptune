@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Site.Title }} - {{ .Title }}</title>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/image-banner.css">
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if .Params.darkMode | default false }}dark-mode{{ else }}light-mode{{ end }}">
+  {{ partial "navbar.html" . }}
+
+  <main>
+      {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+  <script src="{{ .Site.BaseURL }}js/scripts.js"></script>
+  <script src="{{ .Site.BaseURL }}js/text-switcher.js"></script>
+</body>
+</html>

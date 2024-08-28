@@ -1,0 +1,12 @@
+{{ $showMainTitle := .Params.showMainTitle | default true }}
+{{ if $showMainTitle }}
+
+<div class="title-box">
+    <div class="title-box"
+         style="font-size: {{ .Params.titleFontSize | default "2em" }}; 
+                font-weight: {{ .Params.titleFontWeight | default "bold" }};
+                font-family: {{ .Params.titleFontFamily | default "NotoSans" }};">
+        {{ .Params.title | default "Default Title" }}
+    </div>
+    {{ end }}
+</div>

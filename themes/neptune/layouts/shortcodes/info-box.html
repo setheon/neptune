@@ -1,0 +1,140 @@
+{{- with .Params -}}
+    {{- $title := .title -}}
+    {{- $one := .one -}}
+    {{- $oneLabel := .oneLabel -}}
+    {{- $two := .two -}}
+    {{- $twoLabel := .twoLabel -}}
+    {{- $three := .three -}}
+    {{- $threeLabel := .threeLabel -}}
+    {{- $four := .four -}}
+    {{- $fourLabel := .fourLabel -}}
+    {{- $five := .five -}}
+    {{- $fiveLabel := .fiveLabel -}}
+    {{- $six := .six -}}
+    {{- $sixLabel := .sixLabel -}}
+
+    {{- $showOne := .ShowOne | default true -}}
+    {{- $showTwo := .ShowTwo | default true -}}
+    {{- $showThree := .ShowThree | default true -}}
+    {{- $showFour := .ShowFour | default true -}}
+    {{- $showFive := .ShowFive | default true -}}
+    {{- $showSix := .ShowSix | default true -}}
+    {{- $showTitle := .ShowTitle | default true -}}
+
+    {{- $titleFontSize := .titleFontSize | default "24px" -}}
+    {{- $titleFontWeight := .titleFontWeight | default "bold" -}}
+    {{- $oneFontSize := .oneFontSize | default "16px" -}}
+    {{- $oneFontWeight := .oneFontWeight | default "normal" -}}
+    {{- $oneLabelFontSize := .oneLabelFontSize | default "14px" -}}
+    {{- $oneLabelFontWeight := .oneLabelFontWeight | default "normal" -}}
+    {{- $twoFontSize := .twoFontSize | default "16px" -}}
+    {{- $twoFontWeight := .twoFontWeight | default "normal" -}}
+    {{- $twoLabelFontSize := .twoLabelFontSize | default "14px" -}}
+    {{- $twoLabelFontWeight := .twoLabelFontWeight | default "normal" -}}
+    {{- $threeFontSize := .threeFontSize | default "16px" -}}
+    {{- $threeFontWeight := .threeFontWeight | default "normal" -}}
+    {{- $threeLabelFontSize := .threeLabelFontSize | default "14px" -}}
+    {{- $threeLabelFontWeight := .threeLabelFontWeight | default "normal" -}}
+    {{- $fourFontSize := .fourFontSize | default "16px" -}}
+    {{- $fourFontWeight := .fourFontWeight | default "normal" -}}
+    {{- $fourLabelFontSize := .fourLabelFontSize | default "14px" -}}
+    {{- $fourLabelFontWeight := .fourLabelFontWeight | default "normal" -}}
+    {{- $fiveFontSize := .fiveFontSize | default "16px" -}}
+    {{- $fiveFontWeight := .fiveFontWeight | default "normal" -}}
+    {{- $fiveLabelFontSize := .fiveLabelFontSize | default "14px" -}}
+    {{- $fiveLabelFontWeight := .fiveLabelFontWeight | default "normal" -}}
+    {{- $sixFontSize := .sixFontSize | default "16px" -}}
+    {{- $sixFontWeight := .sixFontWeight | default "normal" -}}
+    {{- $sixLabelFontSize := .sixLabelFontSize | default "14px" -}}
+    {{- $sixLabelFontWeight := .sixLabelFontWeight | default "normal" -}}
+
+    <div class="page-description-container">
+        <div class="page-description-section page-description-section-large">
+            {{ if $showTitle }}
+            <div class="page-description-element">
+                <div class="page-description-title">
+                    <label style="font-size: {{ $titleFontSize }}; font-weight: {{ $titleFontWeight }};">
+                        {{ $title }}<br>
+                    </label>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if $showOne }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $oneLabelFontSize }}; font-weight: {{ $oneLabelFontWeight }};">
+                        {{ $oneLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $oneFontSize }}; font-weight: {{ $oneFontWeight }};">
+                    {{ $one }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showTwo }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $twoLabelFontSize }}; font-weight: {{ $twoLabelFontWeight }};">
+                        {{ $twoLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $twoFontSize }}; font-weight: {{ $twoFontWeight }};">
+                    {{ $two }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-medium">
+            {{ if $showThree }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $threeLabelFontSize }}; font-weight: {{ $threeLabelFontWeight }};">
+                        {{ $threeLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $threeFontSize }}; font-weight: {{ $threeFontWeight }};">
+                    {{ $three }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showFour }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $fourLabelFontSize }}; font-weight: {{ $fourLabelFontWeight }};">
+                        {{ $fourLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $fourFontSize }}; font-weight: {{ $fourFontWeight }};">
+                    {{ $four }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-small">
+            {{ if $showFive }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $fiveLabelFontSize }}; font-weight: {{ $fiveLabelFontWeight }};">
+                        {{ $fiveLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $fiveFontSize }}; font-weight: {{ $fiveFontWeight }};">
+                    {{ $five }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showSix }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $sixLabelFontSize }}; font-weight: {{ $sixLabelFontWeight }};">
+                        {{ $sixLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $sixFontSize }}; font-weight: {{ $sixFontWeight }};">
+                    {{ $six }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{- end -}}

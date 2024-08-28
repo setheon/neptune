@@ -1,0 +1,94 @@
+/* Base Styles */
+.footer-divider {
+  border: none; /* Removes default border */
+  display: flex;
+  border-top: 1.5px solid #ccc; /* Thin solid line */
+  margin: 0px 0; /* Adjust spacing as needed */
+  margin-bottom: 10px;
+  width: 100%; /* Ensures the line spans the full width of the container */
+}
+
+.footer-container {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* General gap between columns */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-section-large {
+  width: 50%;
+}
+
+.footer-section-medium {
+  width: 25%;
+  margin-left: 100px; /* Increase space between the first and second column */
+}
+
+.footer-section-small {
+  width: 25%;
+}
+
+.footer-element {
+  margin-bottom: 10px;
+}
+
+.footer-2nd-element {
+  margin-bottom: 10px;
+}
+
+.footer-title {
+  margin-bottom: 10px;
+}
+
+.footer-label {
+  opacity: 0.4;
+  margin-bottom: 5px;
+}
+
+.footer-textbox {
+  padding: 0px;
+}
+
+/* Mobile Styles */
+
+@media (max-width: 900px) {
+  .footer-section-medium {
+      width: 25%;
+      margin-left: 0px; /* Increase space between the first and second column */
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+      width: 90%;
+      margin-top: 0px;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .footer-section {
+      width: 100%;
+  }
+
+  .footer-section-medium {
+      margin-left: 0; /* Remove extra margin for mobile view */
+  }
+
+  .footer-element {
+      margin-bottom: -10px;
+      
+  }
+
+  .footer-2nd-element {
+      margin-top: 30px;
+  }
+}

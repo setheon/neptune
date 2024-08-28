@@ -1,0 +1,32 @@
+<!doctype html>
+<html
+  lang="{{ .Site.Language | default "en-GB" }}"
+  dir="{{ .Language.LanguageDirection | default "auto" }}"
+>
+  {{ partial "navbar.html" . }}
+  {{ partial "head.html" . }}
+  <body>
+    <div class="error-box">
+        <a href="/" class="error-link">
+          <div class="error" data-error="404">404</div>
+      </a>
+    </div>
+  </body> <!-- Added closing body tag -->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000; /* Optional: to enhance contrast */
+  }
+  /* Hover effect for all links */
+  a:hover {
+    text-decoration: none; /* Underline on hover */
+    transition: letter-spacing 0.8s ease, color 0.8s ease; /* Smooth transitions for letter-spacing and color */
+    letter-spacing: 1.2px; /* Increase letter spacing on hover */
+  }
+  
+  </style>
+</html>

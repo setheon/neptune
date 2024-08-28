@@ -1,0 +1,38 @@
+<!-- layouts/shortcodes/square-button.html -->
+<style>
+    .button-box {
+      text-align: center; /* Center the text */
+      font-size: 4rem; /* Very large text size */
+      font-weight: bold; /* Bold text */
+      padding: 10px; /* Add padding around the text (adjust if needed) */
+      width: 100%; /* Span the full width of the container */
+      height: 200px; /* Set the height to exactly 200px */
+      box-sizing: border-box; /* Include padding in the height calculation */
+      display: flex; /* Use Flexbox for vertical centering */
+      align-items: center; /* Center text vertically */
+      justify-content: center; /* Center text horizontally */
+      position: relative; /* Position relative to use absolute positioning for child elements */
+    }
+    
+    .square-button {
+      display: inline-block;
+      padding: 20px 50px; /* Adjust padding to control the size of the button */
+      background-color: transparent; /* Transparent background */
+      color: black; /* Text color */
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      border: 5px solid black; /* Black border with some thickness */
+      border-radius: 0px; /* Optional: round the corners */
+      cursor: pointer;
+      position: absolute; /* Absolute positioning to center within the container */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the button */
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+  </style>
+  <div class="button-box">
+    <a class="square-button" href="{{ .Get "link" }}">{{ .Get "text" }}</a>
+  </div>
+  

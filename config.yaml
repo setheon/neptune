@@ -1,0 +1,102 @@
+baseURL: "https://seth.nz"
+title: seth.nz
+author: Seth Copeland
+languages:
+  en:
+    languageCode: "en"
+    languageDirection: "ltr"
+paginate: 10
+
+googleAnalytics:
+  id: "G-85HE9BS0ZN"
+
+theme: neptune
+
+# Configuration for Markdown rendering
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  description: Example description
+
+  # Mouse tracking animation
+  enableMouseTracker: false
+
+  # Truncation limit of summaries inside projects display containers
+  truncationLimit: 150
+
+  # Logos, favicons, and theme colors
+  assets:
+    favicon: "favicon.ico"
+    favicon16: "favicon-16x16.png"
+    favicon32: "favicon-32x32.png"
+    appleTouchIcon: "apple-touch-icon.png"
+    safariPinnedTabIcon: "safari-pinned-tab.svg"
+    safariPinnedTabColor: "#5bbad5"
+    manifest: "manifest.json"
+    msTileColor: "#2b5797"
+    msTileIcon: "mstile-150x150.png"
+    themeColor: "#040404"
+    logo: "logo.svg"
+
+  # Icons shown below the about text snippet
+  # List of the available icons can be found in the /layouts/partials/svg.html file
+  socialIcons:
+    - name: email
+      url: "mailto:example@example.com"
+      display: Optional name shown in tooltips, defaults to capitalized name
+
+  # List of displayed items (e.g. software projects)
+  itemDisplays:
+    - name: Example project
+      url: "#"
+      description: Project description example
+
+  # font settings
+  fonts:
+    navbar: ''  # font family for the navigation bar. Leave empty if not using a specific font.
+    title: 'Urbanist'  # font family for the title of your site. Use the font-family name specified in your CSS.
+    body: 'Urbanist'  # font family for the body text of your site. Use the font-family name specified in your CSS.
+    h1: 'Urbanist'  # font family for <h1> headings. Use the font-family name specified in your CSS.
+    h2: 'Urbanist'  # font family for <h2> headings. Use the font-family name specified in your CSS.
+    h3: 'Urbanist'  # font family for <h3> headings. Use the font-family name specified in your CSS.
+    h4: 'Urbanist'  # font family for <h4> headings. Use the font-family name specified in your CSS.
+    h5: 'Urbanist'  # font family for <h5> headings. Use the font-family name specified in your CSS.
+    subtitle: 'Urbanist'  # font family for subtitles or other text el
+
+  footer:
+
+    show_footer_quote: true
+    show_column_one: true
+    show_column_two: true
+    show_column_three: true
+    show_quote: true
+
+    # Quote
+    footer_quote: "Embrace Creativity"
+
+    # Footer Column One
+    column_one_label: "Copyright"
+    column_one_labelfontsize: "14px"
+    column_one_labelfontweight: "600"
+    column_one_fontsize: "20px"
+    column_one_fontweight: "bold"
+    column_one_content: "© 2024 Seth Copeland"
+
+    # Footer Column Two
+    column_two_label: "Contact"
+    column_two_labelfontsize: "14px"
+    column_two_labelfontweight: "600"
+    column_two_fontsize: "16px"
+    column_two_fontweight: "normal"
+    column_two_content: "[info@seth.nz](mailto:info@seth.nz)"
+
+    # Footer Column Three
+    column_three_label: "Socials"
+    column_three_labelfontsize: "14px"
+    column_three_labelfontweight: "600"
+    column_three_fontsize: "16px"
+    column_three_fontweight: "normal"
+    column_three_content: "[Instagram](__https://instagram.com/altfullstop__) <br> [YouTube](https://youtube.com/@altfullstop)"

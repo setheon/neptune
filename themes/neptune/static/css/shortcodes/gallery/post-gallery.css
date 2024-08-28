@@ -1,0 +1,181 @@
+/* Masonry image post-gallery styling */
+
+/* Single image gallery */
+.post-gallery.single-image .images {
+  columns: 1;
+}
+
+.post-gallery.single-image .images .img {
+  width: 100%;
+}
+
+/* other css */
+.post-gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+  }
+  
+  .post-gallery .images {
+	gap: 5px;
+	max-width: 90%;
+	margin: 5px 0;
+    columns: var(--GalleryColumns, 3);
+	list-style: none;
+  }
+  
+  .post-gallery .images .img {
+	display: block;
+	margin-bottom: 5px;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  
+  .post-gallery .images img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover; /* Ensures that images cover their containers while maintaining aspect ratio */
+	transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+  
+  /* Zoom effect on hover */
+  .post-gallery .images .img:hover img {
+	transform: scale(1.005); /* Zoom in by 0.5% */
+  }
+  
+  /* Lightbox container */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Lightbox image */
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  /* Animation for closing the lightbox */
+@keyframes spinAndFadeOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+  /* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Width of the arrow button */
+  height: 40px; /* Height of the arrow button */
+  background: none; /* Remove background color */
+  border: none; /* Remove border */
+  color: inherit; /* Inherit color from parent */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  font-size: 24px; /* Font size for arrows */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 0; /* Remove padding */
+}
+
+/* Left and right arrows positioning */
+.arrow.left {
+  left: 10px;
+  background: none; /* Remove background color */
+
+}
+
+.arrow.right {
+  right: 10px;
+  background: none; /* Remove background color */
+
+}
+
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transition for non-animation state */
+  }
+  
+  .lightbox .closing {
+    animation: spinAndFadeOut 0.3s forwards;
+  }
+  
+
+  @media screen and (max-width: 900px) {
+	.post-gallery {
+	  margin-top: 0px;
+	}
+  
+	.post-gallery .images {
+	  max-width: 100%;
+	  padding: 0 13px;
+	  margin-top: 20px;
+	  columns: 2; /* Adjust column count and column width */
+	}
+  }
+  /* Responsive media query code */
+  
+@media screen and (max-width: 640px) {
+  .post-gallery {
+    margin-top: 0px;
+  }
+
+  .post-gallery .images {
+    max-width: 100%;
+    padding: 0 13px;
+    margin-top: 20px;
+    columns: 1; /* Adjust column count and column width */
+  }
+
+  /* Lightbox image */
+  .lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+  }
+
+  /* Position arrows below the image */
+  .lightbox-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .arrow {
+    position: static; /* Reset position */
+    margin: 0px; /* Add margin around the arrows */
+    width: 30px; /* Adjust size */
+    height: 30px; /* Adjust size */
+  }
+
+  .arrow.left {
+    left: -5px;
+  }
+
+  .arrow.right {
+    right: -5px;
+  }
+}

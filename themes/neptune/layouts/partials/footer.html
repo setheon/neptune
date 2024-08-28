@@ -1,0 +1,82 @@
+{{- with .Site.Params.footer -}}
+
+    {{- $footer_quote := .footer_quote | markdownify -}}
+
+    {{- $column_one_content := .column_one_content | markdownify | safeHTML -}}
+    {{- $column_one_label := .column_one_label | markdownify | safeHTML -}}
+    {{- $column_two_content := .column_two_content | markdownify | safeHTML -}}
+    {{- $column_two_label := .column_two_label | markdownify | safeHTML -}}
+    {{- $column_three_content := .column_three_content | markdownify | safeHTML -}}
+    {{- $column_three_label := .column_three_label | markdownify | safeHTML -}}
+
+    {{- $show_footer_quote := .show_footer_quote | default true -}}
+    {{- $show_column_one := .show_column_one | default true -}}
+    {{- $show_column_two := .show_column_two | default true -}}
+    {{- $show_column_three := .show_column_three | default true -}}
+
+    {{- $column_one_fontsize := .column_one_fontsize | default "16px" -}}
+    {{- $column_one_fontweight := .column_one_fontweight | default "normal" -}}
+    {{- $column_one_labelfontsize := .column_one_labelfontsize | default "14px" -}}
+    {{- $column_one_labelfontweight := .column_one_labelfontweight | default "normal" -}}
+    {{- $column_two_fontsize := .column_two_fontsize | default "16px" -}}
+    {{- $column_two_fontweight := .column_two_fontweight | default "normal" -}}
+    {{- $column_two_labelfontsize := .column_two_labelfontsize | default "14px" -}}
+    {{- $column_two_labelfontweight := .column_two_labelfontweight | default "normal" -}}
+    {{- $column_three_fontsize := .column_three_fontsize | default "16px" -}}
+    {{- $column_three_fontweight := .column_three_fontweight | default "normal" -}}
+    {{- $column_three_labelfontsize := .column_three_labelfontsize | default "14px" -}}
+    {{- $column_three_labelfontweight := .column_three_labelfontweight | default "normal" -}}
+    
+    {{ if $show_footer_quote }}
+    <div class="quote-box">
+        <p>{{ .footer_quote | markdownify | safeHTML }}</p>
+      </div>
+    {{ end }}
+
+    <hr class="footer-divider">
+
+    <div class="footer-container">
+
+        <div class="footer-section footer-section-large">
+            {{ if $show_column_one }}
+            <div class="footer-element">
+                <div class="footer-label">
+                    <label style="font-size: {{ $column_one_labelfontsize }}; font-weight: {{ $column_one_labelfontweight }};">
+                        {{ $column_one_label }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $column_one_fontsize }}; font-weight: {{ $column_one_fontweight }};">
+                    {{ $column_one_content }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="footer-section footer-section-medium">
+            {{ if $show_column_two }}
+            <div class="footer-element">
+                <div class="footer-label">
+                    <label style="font-size: {{ $column_two_labelfontsize }}; font-weight: {{ $column_two_labelfontweight }};">
+                        {{ $column_two_label }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $column_two_fontsize }}; font-weight: {{ $column_two_fontweight }};">
+                    {{ $column_two_content }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="footer-section footer-section-small">
+            {{ if $show_column_three }}
+            <div class="footer-element">
+                <div class="footer-label">
+                    <label style="font-size: {{ $column_three_labelfontsize }}; font-weight: {{ $column_three_labelfontweight }};">
+                        {{ $column_three_label }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $column_three_fontsize }}; font-weight: {{ $column_three_fontweight }};">
+                    {{ $column_three_content | safeHTML }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{- end -}}

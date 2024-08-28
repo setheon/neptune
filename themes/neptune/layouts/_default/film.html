@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <!-- Black container at the top -->
+  <div class="top-container"></div>
+
+  <article class="content-single">
+    <!-- Page description -->
+    {{ partial "video-embed.html" . }}
+
+    {{ $showDescription := .Params.showDescription| default true }}
+    {{ if $showDescription }}
+    <div class="content-body">
+      {{ partial "page-description" . }}
+    </div>
+    {{ end }}
+
+    <!-- Masonry Gallery body -->
+    {{ partial "project-gallery.html" . }}
+
+    {{ $UseCustomMarkdownLayout := .Params.UseCustomMarkdownLayout | default false }}
+    {{ if .Params.UseCustomMarkdownLayout }}
+      <div class="content-body">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </article>
+{{ end }}

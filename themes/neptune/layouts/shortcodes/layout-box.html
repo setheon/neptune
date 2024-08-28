@@ -1,0 +1,65 @@
+{{- $title := .Get "title" -}}
+{{- $one := .Get "one" -}}
+{{- $oneLabel := .Get "onelabel" -}}
+{{- $two := .Get "two" -}}
+{{- $twoLabel := .Get "twolabel" -}}
+{{- $three := .Get "three" -}}
+{{- $threeLabel := .Get "threelabel" -}}
+{{- $four := .Get "four" -}}
+{{- $fourLabel := .Get "fourlabel" -}}
+{{- $fiveLabel := .Get "fivelabel" -}}
+{{- $five := .Get "five" -}}
+{{- $sixLabel := .Get "elabel" -}}
+{{- $six:= .Get "six" -}}
+
+<div class="title-container">
+    <div class="text-box">
+        YOUR TEXT
+    </div>
+</div>
+
+<div class="test-container">
+    <div class="test-section test-section-large">
+        <div class="test-element">
+            <div class="test-label">
+                <label>{{ $oneLabel | default "One:" }}<br>-</label>
+            </div>
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+        <div class="test-element">
+            <div class="test-label">
+                <label>{{ $oneLabel | default "One:" }}<br>-</label>
+            </div>
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+    </div>
+    <div class="test-section test-section-medium">
+        <div class="test-element">
+            <div class="test-label">
+                <label>{{ $oneLabel | default "One:" }}<br>-</label>
+            </div>
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+        <div class="test-element">
+            <div class="test-label">
+                <label>{{ $oneLabel | default "One:" }}<br>-</label>
+            </div>
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+    </div>
+    <div class="test-section test-section-small">
+        <div class="test-element">
+            <div class="test-label">
+                <label>{{ $oneLabel | default "One:" }}<br>-</label>
+            </div>
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+        <div class="test-element">
+            <div class="test-label">
+            <label>{{ $oneLabel | default "One:" }}<br>-</label>
+        </div>
+            <div class="test-textbox">
+            <div>{{ $three | default "Lorem Ipsum"}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<!-- gallery.html -->
+<div class="infinity-gallery">
+  <div class="arrow arrow-left">&#9664;</div>
+  <div class="arrow arrow-right">&#9654;</div>
+
+  <div class="gallery-images">
+    {{ range .Params.gallery }}
+      <div class="gallery-item">
+        <img src="{{ . }}" alt="Gallery Image">
+      </div>
+    {{ end }}
+  </div>
+</div>

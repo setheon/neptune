@@ -1,0 +1,170 @@
+{{- with .Params -}}
+    <!-- TEXT REFERENCE -->
+    {{- $title := .title | markdownify -}}
+    {{- $one := .one | markdownify -}}
+    {{- $oneLabel := .oneLabel | markdownify -}}
+    {{- $two := .two | markdownify -}}
+    {{- $twoLabel := .twoLabel | markdownify -}}
+    {{- $three := .three | markdownify -}}
+    {{- $threeLabel := .threeLabel | markdownify -}}
+    {{- $four := .four | markdownify -}}
+    {{- $fourLabel := .fourLabel | markdownify -}}
+    {{- $five := .five | markdownify -}}
+    {{- $fiveLabel := .fiveLabel | markdownify -}}
+    {{- $six := .six | markdownify -}}
+    {{- $sixLabel := .sixLabel | markdownify -}}
+
+    <!-- IGNORE .NA-->
+    {{- $NA := .NA | markdownify -}}
+
+    <!-- SHOW OPTIONS-->
+    {{- $showTitle := .ShowTitle | default true -}}
+    {{- $showOne := .ShowOne | default true -}}
+    {{- $showTwo := .ShowTwo | default true -}}
+    {{- $showThree := .ShowThree | default true -}}
+    {{- $showFour := .ShowFour | default true -}}
+    {{- $showFive := .ShowFive | default true -}}
+    {{- $showSix := .ShowSix | default true -}}
+
+    <!-- TEXT OPTIONS -->
+    {{- $titleFontSize := .titleFontSize | default "2.5em" -}}
+    {{- $titleFontWeight := .titleFontWeight | default "700" -}}
+    {{- $oneFontSize := .oneFontSize | default "16px" -}}
+    {{- $oneFontWeight := .oneFontWeight | default "600" -}}
+    {{- $oneLabelFontSize := .oneLabelFontSize | default "16px" -}}
+    {{- $oneLabelFontWeight := .oneLabelFontWeight | default "600" -}}
+    {{- $twoFontSize := .twoFontSize | default "16px" -}}
+    {{- $twoFontWeight := .twoFontWeight | default "600" -}}
+    {{- $twoLabelFontSize := .twoLabelFontSize | default "16px" -}}
+    {{- $twoLabelFontWeight := .twoLabelFontWeight | default "600" -}}
+    {{- $threeFontSize := .threeFontSize | default "16px" -}}
+    {{- $threeFontWeight := .threeFontWeight | default "600" -}}
+    {{- $threeLabelFontSize := .threeLabelFontSize | default "16px" -}}
+    {{- $threeLabelFontWeight := .threeLabelFontWeight | default "600" -}}
+    {{- $fourFontSize := .fourFontSize | default "16px" -}}
+    {{- $fourFontWeight := .fourFontWeight | default "600" -}}
+    {{- $fourLabelFontSize := .fourLabelFontSize | default "16px" -}}
+    {{- $fourLabelFontWeight := .fourLabelFontWeight | default "600" -}}
+    {{- $fiveFontSize := .fiveFontSize | default "16px" -}}
+    {{- $fiveFontWeight := .fiveFontWeight | default "600" -}}
+    {{- $fiveLabelFontSize := .fiveLabelFontSize | default "16px" -}}
+    {{- $fiveLabelFontWeight := .fiveLabelFontWeight | default "600" -}}
+    {{- $sixFontSize := .sixFontSize | default "16px" -}}
+    {{- $sixFontWeight := .sixFontWeight | default "600" -}}
+    {{- $sixLabelFontSize := .sixLabelFontSize | default "16px" -}}
+    {{- $sixLabelFontWeight := .sixLabelFontWeight | default "600" -}}
+    
+    <!-- SHOW DESCRIPTION / BASICALLY TURNS ALL THIS ON OR OFF -->
+    {{ $showDescription := .Params.showDescription| default true }}
+    {{ if $showDescription }}
+    
+    <div class="page-description-container">
+        <div class="page-description-section page-description-section-large">
+            {{ if $showTitle }}
+            <div class="page-description-element">
+                <div class="page-description-title">
+                    <label style="font-size: {{ $titleFontSize }}; font-weight: {{ $titleFontWeight }};">
+                        {{ $title }}<br>
+                </div>
+            </div>
+            {{ end }}
+            {{ if $showOne }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $oneLabelFontSize }}; font-weight: {{ $oneLabelFontWeight }};">
+                        {{ $oneLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $oneFontSize }}; font-weight: {{ $oneFontWeight }};">
+                    {{ $one }}
+                </div>
+            </div>
+            {{ end }}
+            {{ if $showTwo }}
+            <div class=".page-description-2nd-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $twoLabelFontSize }}; font-weight: {{ $twoLabelFontWeight }};">
+                        {{ $twoLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $twoFontSize }}; font-weight: {{ $twoFontWeight }};">
+                    {{ $two }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-medium">
+            {{ if $showTitle }}
+            <div class="page-description-element">
+                <div class="page-description-element">
+                    <label style="font-size: {{ .Params.NA | default "2em" }}; 
+                    font-weight: {{ .Params.NA | default "bold" }}; 
+                    opacity: 0;">
+                    ~<br>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showThree }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $threeLabelFontSize }}; font-weight: {{ $threeLabelFontWeight }};">
+                        {{ $threeLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $threeFontSize }}; font-weight: {{ $threeFontWeight }};">
+                    {{ $three }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showFour }}
+            <div class="page-description-2nd-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $fourLabelFontSize }}; font-weight: {{ $fourLabelFontWeight }};">
+                        {{ $fourLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $fourFontSize }}; font-weight: {{ $fourFontWeight }};">
+                    {{ $four }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="page-description-section page-description-section-small">
+            {{ if $showTitle }}
+            <div class="page-description-element">
+                <div class="page-description-element">
+                    <label style="font-size: {{ .Params.NA | default "2em" }}; 
+                    font-weight: {{ .Params.NA | default "bold" }}; 
+                    opacity: 0;">
+                    ~<br>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showFive }}
+            <div class="page-description-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $fiveLabelFontSize }}; font-weight: {{ $fiveLabelFontWeight }};">
+                        {{ $fiveLabel}}<br>-</label>
+                </div>
+                <div style="font-size: {{ $fiveFontSize }}; font-weight: {{ $fiveFontWeight }};">
+                    {{ $five | safeHTML }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if $showSix }}
+            <div class="page-description-2nd-element">
+                <div class="page-description-label">
+                    <label style="font-size: {{ $sixLabelFontSize }}; font-weight: {{ $sixLabelFontWeight }};">
+                        {{ $sixLabel }}<br>-</label>
+                </div>
+                <div style="font-size: {{ $sixFontSize }}; font-weight: {{ $sixFontWeight }};">
+                    {{ $six }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+{{- end -}}

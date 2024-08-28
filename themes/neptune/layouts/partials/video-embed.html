@@ -1,0 +1,21 @@
+{{- with .Params -}}
+    {{- $BannerVideoHeight := .BannerVideoHeight -}}
+
+    {{- if .ShowBannerVideo -}}
+        {{- $videoSrc := .BannerVideoSource -}}
+        {{- if $videoSrc -}}
+        <div class="video-container" style="height: {{ $BannerVideoHeight }};">
+            <video class="video-container" autoplay muted playsinline loop>
+              <source src="{{ $videoSrc | absURL }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div id="video-content">
+              <!-- Add any additional content you need here -->
+            </div>
+        </div>
+        {{- else -}}
+            <!-- Handle the case where no video source is provided -->
+            <p>No video source provided.</p>
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

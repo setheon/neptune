@@ -1,0 +1,62 @@
+  /* Base Styles */
+.textbox {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* General gap between columns */
+  margin-bottom: 50px;
+}
+
+.textbox-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textbox-section-large {
+  width: 60%;
+}
+
+.textbox-section-medium {
+  width: 25%;
+  margin-left: 100px; /* Increase space between the first and second column */
+}
+
+.textbox-section-small {
+  width: 25%;
+}
+
+.textbox-element {
+  margin-bottom: 10px;
+}
+
+.textbox-label {
+  opacity: 0.3;
+  margin-bottom: 5px;
+}
+
+.textbox-textbox {
+  padding: 0px;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .textbox-container {
+      width: 90%;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .textbox-section {
+      width: 100%;
+  }
+
+  .textbox-section-medium {
+      margin-left: 0; /* Remove extra margin for mobile view */
+  }
+
+  .textbox-element {
+      margin-bottom: 0px;
+  }
+}

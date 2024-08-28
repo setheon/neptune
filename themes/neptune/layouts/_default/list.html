@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <div class="gallery">
+    {{ range .Pages }}
+      {{ if eq .Params.template "gallery" }}
+        <div class="gallery-item">
+          <a href="{{ .Permalink }}">
+            <img src="{{ .Params.image | default "default-image.jpg" | absURL }}" alt="{{ .Title }}" />
+            <div class="gallery-caption">
+              <h2>{{ .Title }}</h2>
+              <!-- Description is hidden by CSS -->
+              <p>{{ .Summary }}</p>
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

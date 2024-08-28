@@ -1,0 +1,17 @@
+<div class="banner-container">
+  {{ $image := .Get "image" }}
+  {{ $title := .Get "title" }}
+  {{ $description := .Get "description" }}
+
+  {{ if $image }}
+  <div class="banner-item">
+      <img src="{{ $image }}" alt="{{ $title }}" />
+      <div class="banner-caption">
+        <h2>{{ $title }}</h2>
+        <!-- Description is hidden by CSS -->
+        <p>{{ $description }}</p>
+      </div>
+    </a>
+  </div>
+  {{ end }}
+</div>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if .Params.darkMode }}dark-mode{{ else }}light-mode{{ end }}">
+  {{ partial "navbar.html" . }}
+
+  <main>
+    <article>
+      <section class="content-container">
+        {{ .Content }}
+        
+        {{ if .Params.showDescription }}
+        <div class="content-body">
+          {{ partial "post-description.html" . }}
+        </div>
+        {{ end }}
+
+        <!-- Gallery Section -->
+        {{ if .Params.gallery }}
+          {{ partial "gallery.html" . }}
+        {{ end }}
+      </section>
+    </article>
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  <script src="{{ .Site.BaseURL }}js/scripts.js"></script>
+  <script src="{{ "js/gallery.js" | relURL }}" defer></script>
+</body>
+</html>

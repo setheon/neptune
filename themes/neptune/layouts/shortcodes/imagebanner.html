@@ -1,0 +1,16 @@
+<div class="banner-container">
+  {{ $image := .Get "image" }}
+  {{ $title := .Get "title" }}
+  {{ $link := .Get "link" }} <!-- Get the link from the shortcode parameter -->
+
+  {{ if $image }}
+  <a href="{{ $link }}" class="{{ if $title }}banner-item{{ else }}banner-notitle{{ end }}">
+      <img src="{{ $image }}" alt="{{ $title }}" />
+      {{ if $title }}
+      <div class="banner-title">
+        <h2>{{ $title }}</h2>
+      </div>
+      {{ end }}
+  </a>
+  {{ end }}
+</div>

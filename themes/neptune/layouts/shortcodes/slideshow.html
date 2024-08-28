@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
+
+<div class="slideshow">
+    {{ $images := .Get "images" | split "," }}
+    {{ $columns := .Get "columns" | default 3 }}
+    {{ $totalImages := len $images }}
+    {{ $imagesPerColumn := div $totalImages $columns }}
+    {{ $remainingImages := mod $totalImages $columns }}
+
+    {{ range $i := seq 0 (sub $columns 1) }}
+    <div class="slideshow__column">
+        {{ $start := mul $i $imagesPerColumn }}
+        {{ $end := add $start $imagesPerColumn }}
+        {{ if eq $i (sub $columns 1) }}
+        {{ $end = $totalImages }}
+        {{ end }}
+
+        {{ range $j := seq $start (sub $end 1) }}
+        {{ with index $images $j }}
+        {{ $data := split "|" . }}
+        <div class="slideshow__item">
+            <a href="{{ index $data 0 }}" target="_blank" class="slideshow__link">
+                <figure class="slideshow__thumb">
+                    <img src="{{ index $data 1 }}" alt="{{ index $data 2 }}" class="slideshow__image">
+                </figure>
+            </a>
+            <div class="slideshow__description">
+                <p>{{ index $data 3 }}</p>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
