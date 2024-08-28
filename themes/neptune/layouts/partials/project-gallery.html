@@ -2,55 +2,46 @@
 {{ $GalleryColumns := .Params.GalleryColumns | default 3 }}
 {{ if $UseGallery }}
 
-<section id="project-gallery" class="post-gallery">
-  <ul class="images">
-    {{ with .File.Path }}
-      {{ $currentPageDir := path.Dir . }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <section id="project-gallery" class="post-gallery">
+    <ul class="images">
+      {{ $currentPageDir := path.Dir .File.Path }}
       {{ $postsDir := printf "%s/post" $currentPageDir }}
 
-      <!-- Debug output -->
-      <p>Current Page Directory: {{ $currentPageDir }}</p>
-      <p>Posts Directory: {{ $postsDir }}</p>
+      <!-- Fetch pages from the posts directory and sort by rank -->
+      {{ $posts := where .Site.Pages "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
+      {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
 
-      {{ with .Site.Pages }}
-        {{ $posts := where . "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
-        {{ if $posts }}
-          {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
-          {{ if $sortedPosts }}
-            {{ range $sortedPosts }}
-              {{ $featured := .Params.featured }}
-              {{ if $featured }}
-                {{ $featuredPath := .Params.featured | relURL }}
-                <li class="img">
-                  <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
-                    <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-                  </a>
-                </li>
-              {{ else }}
-                <p>No featured image found for {{ .Title }}.</p>
-              {{ end }}
-            {{ end }}
-          {{ else }}
-            <p>No sorted posts found.</p>
-          {{ end }}
-        {{ else }}
-          <p>No posts found in directory: {{ $postsDir }}.</p>
+      {{ range $sortedPosts }}
+        {{ $featured := .Params.featured }}
+        {{ if $featured }}
+          <!-- Construct the full path to the image -->
+          {{ $featuredPath := .Params.featured | relURL }}
+          <li class="img">
+            <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
+              <img src="{{ $featuredPath }}" alt="{{ .Title }}">
+            </a>
+          </li>
         {{ end }}
-      {{ else }}
-        <p>No pages found in site.</p>
       {{ end }}
-    {{ else }}
-      <p>No file path found.</p>
-    {{ end }}
-  </ul>
-</section>
+    </ul>
+  </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var gallery = document.getElementById('project-gallery');
-    var columns = {{ $GalleryColumns }};
-    gallery.style.setProperty('--GalleryColumns', columns);
-  });
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var gallery = document.getElementById('project-gallery'); // Fix ID reference
+      var columns = {{ $GalleryColumns }};
+      gallery.style.setProperty('--GalleryColumns', columns);
+    });
+  </script>
+</body>
+</html>
 
 {{ end }}
