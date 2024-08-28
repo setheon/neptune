@@ -28,7 +28,7 @@ authorLabel: "Author"
 year: "2024"
 yearLabel: "Year"
 links: |
-    [Instagram](__https://instagram.com/altfullstop__) 
+    [Instagram](https://instagram.com/altfullstop) 
     <br> [YouTube](https://youtube.com/@altfullstop)
 linksLabel: "Links"
 
