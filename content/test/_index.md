@@ -35,7 +35,7 @@ twoFontWeight: "normal"
 # Define Label & Text of Section Three in Column 2
 ShowThree: true
 threeLabel: "Links"
-three: "[Instagram](__https://instagram.com/altfullstop__) <br> [YouTube](https://youtube.com/@altfullstop)"
+three: "[Instagram](https://instagram.com/altfullstop) <br> [YouTube](https://youtube.com/@altfullstop)"
 threeFontSize: "16px"
 threeFontWeight: "normal"
 

@@ -11,9 +11,6 @@
     </div>
     {{ end }}
 
-    <!-- Masonry Gallery body -->
-    {{ partial "project-gallery.html" . }}
-
     {{ $UseCustomMarkdownLayout := .Params.UseCustomMarkdownLayout | default false }}
     {{ if .Params.UseCustomMarkdownLayout }}
       <div class="content-body">
