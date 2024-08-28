@@ -1,45 +1,121 @@
 {{ $UseGallery := .Params.UseGallery | default true }}
-{{ $GalleryColumns := .Params.GalleryColumns | default 3 }}
 {{ if $UseGallery }}
 
-<section id="project-gallery" class="post-gallery">
+<section class="post-gallery {{ if and (.Params.featured) (not .Params.images) }}single-image{{ end }}">
   <ul class="images">
-    {{ $currentPageDir := path.Dir .File.Path }}
-    {{ $postsDir := printf "%s/post" $currentPageDir }}
+    <!-- Display the featured image first -->
+    {{ with .Params.featured }}
+      {{ $featuredPath := . | relURL }}
+      <li class="img">
+        <a href="#" class="lightbox-trigger" data-image="{{ $featuredPath }}">
+          <img src="{{ $featuredPath }}" alt="Featured Image">
+        </a>
+      </li>
+    {{ end }}
 
-    {{ with .Site.Pages }}
-      {{ $posts := where . "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
-      {{ if $posts }}
-        {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
-        {{ if $sortedPosts }}
-          {{ range $sortedPosts }}
-            {{ $featured := .Params.featured }}
-            {{ if $featured }}
-              {{ $featuredPath := .Params.featured | relURL }}
-              <li class="img">
-                <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
-                  <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-                </a>
-              </li>
-            {{ end }}
-          {{ end }}
-        {{ else }}
-          <p>No sorted posts found.</p>
-        {{ end }}
-      {{ else }}
-        <p>No posts found in directory.</p>
+    <!-- Display additional images -->
+    {{ with .Params.images }}
+      {{ range . }}
+        {{ $imagePath := . | relURL }}
+        <li class="img">
+          <a href="#" class="lightbox-trigger" data-image="{{ $imagePath }}">
+            <img src="{{ $imagePath }}" alt="Gallery Image">
+          </a>
+        </li>
       {{ end }}
-    {{ else }}
-      <p>No pages found.</p>
     {{ end }}
   </ul>
 </section>
 
+<!-- Lightbox HTML -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <button class="arrow left">&lt;</button>
+  <button class="arrow right">&gt;</button>
+  <img id="lightbox-image" src="" alt="Lightbox Image">
+</div>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var gallery = document.getElementById('project-gallery');
-    var columns = {{ $GalleryColumns }};
-    gallery.style.setProperty('--GalleryColumns', columns);
+  document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox .close');
+    const arrows = {
+      left: document.querySelector('.arrow.left'),
+      right: document.querySelector('.arrow.right')
+    };
+
+    let currentIndex = 0;
+    const images = Array.from(document.querySelectorAll('.lightbox-trigger')).map(trigger => trigger.getAttribute('data-image'));
+
+    // Function to open the lightbox
+    function openLightbox(imageSrc) {
+      lightboxImage.src = imageSrc;
+      lightbox.style.display = 'flex';
+      currentIndex = images.indexOf(imageSrc);
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+      closeButton.classList.add('closing');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+        closeButton.classList.remove('closing');
+      }, 300);
+    }
+
+    // Function to show the next image
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImage.src = images[currentIndex];
+    }
+
+    // Function to show the previous image
+    function showPreviousImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImage.src = images[currentIndex];
+    }
+
+    // Open lightbox when clicking on images
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        const imageSrc = this.getAttribute('data-image');
+        openLightbox(imageSrc);
+      });
+    });
+
+    // Close lightbox when clicking on the close button
+    closeButton.addEventListener('click', closeLightbox);
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox when pressing the Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Navigate through images with arrow buttons
+    arrows.left.addEventListener('click', showPreviousImage);
+    arrows.right.addEventListener('click', showNextImage);
+
+    // Navigate through images with arrow keys
+    document.addEventListener('keydown', function(e) {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowRight') {
+          showNextImage();
+        } else if (e.key === 'ArrowLeft') {
+          showPreviousImage();
+        }
+      }
+    });
   });
 </script>
 
