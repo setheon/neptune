@@ -4,35 +4,43 @@
 
 <section id="project-gallery" class="post-gallery">
   <ul class="images">
-    {{ $currentPageDir := path.Dir .File.Path }}
-    {{ $postsDir := printf "%s/post" $currentPageDir }}
+    {{ with .File.Path }}
+      {{ $currentPageDir := path.Dir . }}
+      {{ $postsDir := printf "%s/post" $currentPageDir }}
 
-    {{ with .Site.Pages }}
-      {{ $posts := where . "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
-      {{ if $posts }}
-        {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
-        {{ if $sortedPosts }}
-          {{ range $sortedPosts }}
-            {{ $featured := .Params.featured }}
-            {{ if $featured }}
-              {{ $featuredPath := .Params.featured | relURL }}
-              <li class="img">
-                <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
-                  <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-                </a>
-              </li>
-            {{ else }}
-              <p>No featured image found for {{ .Title }}.</p>
+      <!-- Debug output -->
+      <p>Current Page Directory: {{ $currentPageDir }}</p>
+      <p>Posts Directory: {{ $postsDir }}</p>
+
+      {{ with .Site.Pages }}
+        {{ $posts := where . "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
+        {{ if $posts }}
+          {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
+          {{ if $sortedPosts }}
+            {{ range $sortedPosts }}
+              {{ $featured := .Params.featured }}
+              {{ if $featured }}
+                {{ $featuredPath := .Params.featured | relURL }}
+                <li class="img">
+                  <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
+                    <img src="{{ $featuredPath }}" alt="{{ .Title }}">
+                  </a>
+                </li>
+              {{ else }}
+                <p>No featured image found for {{ .Title }}.</p>
+              {{ end }}
             {{ end }}
+          {{ else }}
+            <p>No sorted posts found.</p>
           {{ end }}
         {{ else }}
-          <p>No sorted posts found.</p>
+          <p>No posts found in directory: {{ $postsDir }}.</p>
         {{ end }}
       {{ else }}
-        <p>No posts found in directory: {{ $postsDir }}.</p>
+        <p>No pages found in site.</p>
       {{ end }}
     {{ else }}
-      <p>No pages found in site.</p>
+      <p>No file path found.</p>
     {{ end }}
   </ul>
 </section>
