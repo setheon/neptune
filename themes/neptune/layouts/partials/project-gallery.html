@@ -2,46 +2,36 @@
 {{ $GalleryColumns := .Params.GalleryColumns | default 3 }}
 {{ if $UseGallery }}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-</head>
-<body>
-  <section id="project-gallery" class="post-gallery">
-    <ul class="images">
-      {{ $currentPageDir := path.Dir .File.Path }}
-      {{ $postsDir := printf "%s/post" $currentPageDir }}
+<section id="project-gallery" class="post-gallery">
+  <ul class="images">
+    {{ $currentPageDir := path.Dir .File.Path }}
+    {{ $postsDir := printf "%s/post" $currentPageDir }}
 
-      <!-- Fetch pages from the posts directory and sort by rank -->
-      {{ $posts := where .Site.Pages "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
-      {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
+    <!-- Fetch pages from the posts directory and sort by rank -->
+    {{ $posts := where .Site.Pages "File.Dir" "in" (slice $postsDir (printf "%s/post/" $currentPageDir)) }}
+    {{ $sortedPosts := sort $posts "Params.rank" "desc" }}
 
-      {{ range $sortedPosts }}
-        {{ $featured := .Params.featured }}
-        {{ if $featured }}
-          <!-- Construct the full path to the image -->
-          {{ $featuredPath := .Params.featured | relURL }}
-          <li class="img">
-            <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
-              <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-            </a>
-          </li>
-        {{ end }}
+    {{ range $sortedPosts }}
+      {{ $featured := .Params.featured }}
+      {{ if $featured }}
+        <!-- Construct the full path to the image -->
+        {{ $featuredPath := .Params.featured | relURL }}
+        <li class="img">
+          <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
+            <img src="{{ $featuredPath }}" alt="{{ .Title }}">
+          </a>
+        </li>
       {{ end }}
-    </ul>
-  </section>
+    {{ end }}
+  </ul>
+</section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var gallery = document.getElementById('project-gallery'); // Fix ID reference
-      var columns = {{ $GalleryColumns }};
-      gallery.style.setProperty('--GalleryColumns', columns);
-    });
-  </script>
-</body>
-</html>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var gallery = document.getElementById('project-gallery'); // Fix ID reference
+    var columns = {{ $GalleryColumns }};
+    gallery.style.setProperty('--GalleryColumns', columns);
+  });
+</script>
 
 {{ end }}
