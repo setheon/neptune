@@ -1,6 +1,6 @@
 ---
 title: "GRAPHIC DESIGN"
-layout: "project"
+layout: "custom"
 UseCustomMarkdownLayout: "true"
 
 oneLabel: "About"
