@@ -16,7 +16,7 @@ five: |
   If you have any inquires regarding my creative work or wish to chat about working together, get it touch with me by sending me an email to [info@seth.nz](mailto:info@seth.nz)
 
 showTitle: true
-showOne: true
+showOne: true 
 showTwo: false
 showThree: true
 showFour: false

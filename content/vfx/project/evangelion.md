@@ -1,5 +1,5 @@
 ---
-url: "film/project/evangelion"
+url: "vfx/project/evangelion"
 layout: "single"
 darkMode: true
 ---

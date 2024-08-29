@@ -4,12 +4,8 @@
 {{ if $UseGallery }}
   <section id="project-gallery" class="post-gallery">
     <ul class="images">
-      <!-- Debugging: Display number of pages in site -->
-      <p>Number of Pages in Site: {{ len .Site.Pages }}</p>
-
       <!-- Fetch pages that have a featured image -->
       {{ $featuredPages := where .Site.Pages "Params.featured" "ne" "" }}
-      <p>Number of Featured Pages: {{ len $featuredPages }}</p>
 
       <!-- Sort pages by rank if available -->
       {{ $sortedPages := sort $featuredPages "Params.rank" "desc" }}
@@ -22,14 +18,10 @@
           <li class="img">
             <a href="{{ .Permalink }}" title="View {{ .Title }} Gallery">
               <img src="{{ $featuredPath }}" alt="{{ .Title }}">
-              <!-- Debugging: Output the image path -->
-              <p>Image Path: {{ $featuredPath }}</p>
             </a>
           </li>
         {{ else }}
-          <!-- Debugging: No featured image found -->
           <li class="img">
-            <p>No Featured Image for {{ .Title }}</p>
           </li>
         {{ end }}
       {{ end }}

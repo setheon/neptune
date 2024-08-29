@@ -58,32 +58,4 @@ sixLabelFontSize: "16px"
 sixLabelFontWeight: "600"
 ---
 
-{{< imagebanner
-  image="/images/banners/people.png"
-  title="PORTRAITURE"
-  link="/photography/portraiture"
->}}
-<br>
-{{< imagebanner
-  image="/images/banners/urban.png"
-  title="URBAN & INFRASTRUCTURE"
-  link="/photography/urban"
->}}
-<br>
-{{< imagebanner
-  image="/images/banners/nature.png"
-  title="NATURE"
-  link="/photography/nature"
->}}
-<br>
-{{< imagebanner
-  image="/images/banners/abstract.png"
-  title="ABSTRACT"
-  link="/photography/abstract"
->}}
-<br>
-{{< imagebanner
-  image="/images/banners/bts.png"
-  title="ON-SET BTS"
-  link="/photography/bts"
->}}
+

@@ -1,5 +1,5 @@
 ---
-url: "film/project/universe"
+url: "vfx/project/universe"
 layout: "single"
 ---
 

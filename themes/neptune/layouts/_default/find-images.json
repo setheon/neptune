@@ -1,0 +1,17 @@
+[
+    {{- $first := true -}}
+    {{ range .Site.Pages }}
+      {{ if and (eq (path.Ext .File.Path) ".md") (in .File.Path "post") }}
+        {{ if not $first -}},{{ end -}}
+        {
+          "Params": {
+            "featured": "{{ .Params.featured }}"
+          },
+          "Permalink": "{{ .Permalink }}",
+          "Title": "{{ .Title }}"
+        }
+        {{ $first = false }}
+      {{ end }}
+    {{ end }}
+  ]
+  
