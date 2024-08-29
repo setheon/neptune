@@ -1,7 +1,7 @@
 ---
 layout: "project"
 darkMode: true
-UseGallery: true
+UseGallery: false
 UseCustomMarkdownLayout: "true"
 title: ABSTRACT DESIGN
 
