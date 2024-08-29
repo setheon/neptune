@@ -2,16 +2,16 @@
 title: "Liz Wyatt"
 layout: "post"
 year: "2024"
-featured: "/images/photography/people/portraits/lizwyatt/lizwyatt9.jpg"
+featured: "/images/photography/portraiture/portraits/lizwyatt/lizwyatt9.jpg"
 rank: 9990
 images:
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt1.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt14.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt11.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt20.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt27.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt33.jpg"
-  - "/images/photography/people/portraits/lizwyatt/lizwyatt34.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt1.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt14.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt11.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt20.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt27.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt33.jpg"
+  - "/images/photography/portraiture/portraits/lizwyatt/lizwyatt34.jpg"
 GalleryColumns: 2
 darkmode: true
 

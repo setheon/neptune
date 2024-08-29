@@ -2,13 +2,13 @@
 title: "Jin Cha Studio Shoot 2"
 layout: "post"
 year: "2024"
-featured: "/images/photography/people/portraits/jincha/studioshoot/jincha13.jpg"
+featured: "/images/photography/portraiture/portraits/jincha/studioshoot/jincha13.jpg"
 rank: 9997
 images:
-  - "/images/photography/people/portraits/jincha/studioshoot/jincha14.jpg"
-  - "/images/photography/people/portraits/jincha/studioshoot/jincha15.jpg"
-  - "/images/photography/people/portraits/jincha/studioshoot/jincha12.jpg"
-  - "/images/photography/people/portraits/jincha/studioshoot/jincha16.jpg"
+  - "/images/photography/portraiture/portraits/jincha/studioshoot/jincha14.jpg"
+  - "/images/photography/portraiture/portraits/jincha/studioshoot/jincha15.jpg"
+  - "/images/photography/portraiture/portraits/jincha/studioshoot/jincha12.jpg"
+  - "/images/photography/portraiture/portraits/jincha/studioshoot/jincha16.jpg"
 
 GalleryColumns: 2
 darkmode: true
@@ -23,12 +23,12 @@ description: |
     I've done so many photoshoots with Jin Cha that I am starting to lose count, he's so reliable as being a practice model while I was adjusting to more portaiture styles. I have taken over a thousand photos of this amazing man. Here's some from a shoot I did with him in the studios at Massey University.
 
     Other Shoots with Jin Cha:<br>
-    [Studio 1](https://seth.nz/photography/people/post/jincha-studio-1/) |
-    [Studio 2](https://seth.nz/photography/people/post/jincha-studio-2/) |
-    [Studio 3](https://seth.nz/photography/people/post/jincha-studio-3/)  <br>
-    [Jin Cha Watefront Shoot](https://seth.nz/photography/people/post/jincha-waterfront) <br>
-    [Jin Cha Botanic Garden Shoot 1](https://seth.nz/photography/people/post/jincha-botanic-1/) |
-    [Jin Cha Botanic Garden Shoot 2](https://seth.nz/photography/people/post/jincha-botanic-2/) 
+    [Studio 1](https://seth.nz/photography/portraiture/post/jincha-studio-1/) |
+    [Studio 2](https://seth.nz/photography/portraiture/post/jincha-studio-2/) |
+    [Studio 3](https://seth.nz/photography/portraiture/post/jincha-studio-3/)  <br>
+    [Jin Cha Watefront Shoot](https://seth.nz/photography/portraiture/post/jincha-waterfront) <br>
+    [Jin Cha Botanic Garden Shoot 1](https://seth.nz/photography/portraiture/post/jincha-botanic-1/) |
+    [Jin Cha Botanic Garden Shoot 2](https://seth.nz/photography/portraiture/post/jincha-botanic-2/) 
 descriptionLabel: "About"
 author: "Seth Copeland"
 authorLabel: "Author"

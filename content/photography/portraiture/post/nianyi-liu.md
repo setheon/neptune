@@ -2,15 +2,15 @@
 title: "Nianyi Liu"
 layout: "post"
 year: "2024"
-featured: "/images/photography/people/portraits/nianyi/nianyi1.jpg"
+featured: "/images/photography/portraiture/portraits/nianyi/nianyi1.jpg"
 rank: 9998
 images:
-  - "/images/photography/people/portraits/nianyi/nianyi2.jpg"
-  - "/images/photography/people/portraits/nianyi/nianyi6.jpg"
-  - "/images/photography/people/portraits/nianyi/nianyi3.jpg"
-  - "/images/photography/people/portraits/nianyi/nianyi4.jpg"
-  - "/images/photography/people/portraits/nianyi/nianyi5.jpg"
-  - "/images/photography/people/portraits/nianyi/nianyi7.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi2.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi6.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi3.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi4.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi5.jpg"
+  - "/images/photography/portraiture/portraits/nianyi/nianyi7.jpg"
 GalleryColumns: 2
 darkmode: true
 

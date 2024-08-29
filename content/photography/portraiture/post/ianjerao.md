@@ -2,17 +2,17 @@
 title: "Ian Jerao"
 layout: "post"
 year: "2024"
-featured: "/images/photography/people/portraits/ianjerao/ianjerao9.jpg"
+featured: "/images/photography/portraiture/portraits/ianjerao/ianjerao9.jpg"
 rank: 9970
 images:
-  - "/images/photography/people/portraits/ianjerao/ianjerao7.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao10.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao12.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao16.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao19.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao24.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao29.jpg"
-  - "/images/photography/people/portraits/ianjerao/ianjerao30.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao7.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao10.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao12.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao16.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao19.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao24.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao29.jpg"
+  - "/images/photography/portraiture/portraits/ianjerao/ianjerao30.jpg"
 
 GalleryColumns: 2
 darkmode: true

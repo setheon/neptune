@@ -2,14 +2,14 @@
 title: "Sophia Stace"
 layout: "post"
 year: "2024"
-featured: "/images/photography/people/weddings/stace/sophiastace4.jpg"
+featured: "/images/photography/portraiture/weddings/stace/sophiastace4.jpg"
 rank: 9999
 images:
-  - "/images/photography/people/weddings/stace/sophiastace2.jpg"
-  - "/images/photography/people/weddings/stace/sophiastace3.jpg"
-  - "/images/photography/people/weddings/stace/sophiastace1.jpg"
-  - "/images/photography/people/weddings/stace/sophiastace5.jpg"
-  - "/images/photography/people/weddings/stace/sophiastace6.jpg"
+  - "/images/photography/portraiture/weddings/stace/sophiastace2.jpg"
+  - "/images/photography/portraiture/weddings/stace/sophiastace3.jpg"
+  - "/images/photography/portraiture/weddings/stace/sophiastace1.jpg"
+  - "/images/photography/portraiture/weddings/stace/sophiastace5.jpg"
+  - "/images/photography/portraiture/weddings/stace/sophiastace6.jpg"
 GalleryColumns: 2
 darkmode: true
 
@@ -61,7 +61,7 @@ text
 
 
 {{< imagebanner
-  image="assets/images/photography/people/weddings/patina/1.jpg"
-  title="PEOPLE"
+  image="assets/images/photography/portraiture/weddings/patina/1.jpg"
+  title="portraiture"
 >}}
 <br>
